@@ -3,6 +3,7 @@
  */
 process RUN_ALPHAFOLD2_MSA {
     tag   "$meta.id"
+    //label 'process_gpu'
 
     container "nf-core/proteinfold_alphafold2_msa:1.1.0"
     cpus 12

@@ -58,12 +58,14 @@ if (params.mode == "alphafold2") {
     include { ESMFOLD } from './workflows/esmfold'
 }
 
+
 workflow NFCORE_PROTEINFOLD {
     //
     // WORKFLOW: Run alphafold2
     //
     if(params.mode == "alphafold2") {
         ALPHAFOLD2 ()
+
     }
 
     //

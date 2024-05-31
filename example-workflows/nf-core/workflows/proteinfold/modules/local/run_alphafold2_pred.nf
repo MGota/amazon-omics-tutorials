@@ -3,12 +3,13 @@
  */
 process RUN_ALPHAFOLD2_PRED {
     tag   "$meta.id"
+    label 'process_medium'
 
-    container "nf-core/proteinfold_alphafold2_split:1.1.0"
+    container 'nf-core/proteinfold_alphafold2_split:1.1.0'
     cpus 12
     memory '72 GB'
     time '16h'
-    accelerator 1, type: 'nvidia-tesla-t4-a10g'
+    accelerator 1, type: 'nvidia-tesla-a10g'
 
     input:
     tuple val(meta), path(fasta)

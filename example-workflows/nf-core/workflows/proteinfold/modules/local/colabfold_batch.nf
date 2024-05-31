@@ -1,8 +1,11 @@
 process COLABFOLD_BATCH {
     tag "$meta.id"
-    label 'process_medium'
-
+    
     container "nf-core/proteinfold_colabfold:1.1.0"
+    cpus 12
+    memory '72 GB'
+    time '16h'
+    accelerator 1, type: 'nvidia-tesla-a10g'
 
     input:
     tuple val(meta), path(fasta)
